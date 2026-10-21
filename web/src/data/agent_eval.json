@@ -1,0 +1,404 @@
+{
+  "generated_at": "2026-10-21",
+  "data_mode": "mock",
+  "llm": "openai/gpt-oss-120b",
+  "agent": {
+    "summary": {
+      "total": 12,
+      "pass": 11,
+      "grounded": 11,
+      "tool_ok": 12
+    },
+    "rows": [
+      {
+        "question": "Tháng tới tôi nên đặt thêm bao nhiêu tấn để không thiếu hàng?",
+        "mode": "rules",
+        "tools_used": [
+          "plan_inventory",
+          "get_forecast",
+          "get_alerts"
+        ],
+        "expected_tools": [
+          "plan_inventory"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 3,
+        "pass": true
+      },
+      {
+        "question": "Tồn kho an toàn nên giữ bao nhiêu?",
+        "mode": "llm",
+        "tools_used": [
+          "plan_inventory"
+        ],
+        "expected_tools": [
+          "plan_inventory"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 1,
+        "pass": true
+      },
+      {
+        "question": "Nên ưu tiên thị trường nào trong 3 tháng tới?",
+        "mode": "llm",
+        "tools_used": [
+          "rank_markets"
+        ],
+        "expected_tools": [
+          "rank_markets"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": false,
+        "unmatched": [
+          50
+        ],
+        "steps": 1,
+        "pass": false
+      },
+      {
+        "question": "Nếu giá giảm 10% thì nhu cầu thay đổi thế nào?",
+        "mode": "llm",
+        "tools_used": [
+          "run_scenario"
+        ],
+        "expected_tools": [
+          "run_scenario"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 1,
+        "pass": true
+      },
+      {
+        "question": "Nếu giá giảm 10% và mưa thiếu 40 mm thì kế hoạch nhập kho đổi thế nào?",
+        "mode": "rules",
+        "tools_used": [
+          "run_scenario",
+          "plan_inventory",
+          "plan_inventory"
+        ],
+        "expected_tools": [
+          "plan_inventory"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 3,
+        "pass": true
+      },
+      {
+        "question": "Hiện có rủi ro nào tôi cần xử lý?",
+        "mode": "rules",
+        "tools_used": [
+          "get_alerts",
+          "get_alerts",
+          "get_forecast"
+        ],
+        "expected_tools": [
+          "get_alerts"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 2,
+        "pass": true
+      },
+      {
+        "question": "Dùng dự báo AI thay cho kinh nghiệm thì tiết kiệm được bao nhiêu?",
+        "mode": "rules",
+        "tools_used": [
+          "compare_policies"
+        ],
+        "expected_tools": [
+          "compare_policies"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 1,
+        "pass": true
+      },
+      {
+        "question": "Mô hình nào chính xác nhất?",
+        "mode": "rules",
+        "tools_used": [
+          "get_model_accuracy",
+          "get_model_accuracy"
+        ],
+        "expected_tools": [
+          "get_model_accuracy"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 1,
+        "pass": true
+      },
+      {
+        "question": "Nếu lead time là 3 tháng thì AI tiết kiệm bao nhiêu so với kinh nghiệm?",
+        "mode": "rules",
+        "tools_used": [
+          "compare_policies"
+        ],
+        "expected_tools": [
+          "compare_policies"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 1,
+        "pass": true
+      },
+      {
+        "question": "Quy định EUDR áp dụng từ ngày nào?",
+        "mode": "rules",
+        "tools_used": [],
+        "expected_tools": [],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 0,
+        "pass": true
+      },
+      {
+        "question": "Giá cà phê Indonesia tuần sau là bao nhiêu?",
+        "mode": "rules",
+        "tools_used": [],
+        "expected_tools": [],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 0,
+        "pass": true
+      },
+      {
+        "question": "Giá tăng 50% thì sao?",
+        "mode": "rules",
+        "tools_used": [],
+        "expected_tools": [],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 0,
+        "pass": true
+      }
+    ]
+  },
+  "rules_baseline": {
+    "summary": {
+      "total": 12,
+      "pass": 12,
+      "grounded": 12,
+      "tool_ok": 12
+    },
+    "rows": [
+      {
+        "question": "Tháng tới tôi nên đặt thêm bao nhiêu tấn để không thiếu hàng?",
+        "mode": "rules",
+        "tools_used": [
+          "plan_inventory",
+          "get_forecast",
+          "get_alerts"
+        ],
+        "expected_tools": [
+          "plan_inventory"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 3,
+        "pass": true
+      },
+      {
+        "question": "Tồn kho an toàn nên giữ bao nhiêu?",
+        "mode": "rules",
+        "tools_used": [
+          "plan_inventory",
+          "get_forecast",
+          "get_alerts"
+        ],
+        "expected_tools": [
+          "plan_inventory"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 3,
+        "pass": true
+      },
+      {
+        "question": "Nên ưu tiên thị trường nào trong 3 tháng tới?",
+        "mode": "rules",
+        "tools_used": [
+          "rank_markets",
+          "get_forecast"
+        ],
+        "expected_tools": [
+          "rank_markets"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 2,
+        "pass": true
+      },
+      {
+        "question": "Nếu giá giảm 10% thì nhu cầu thay đổi thế nào?",
+        "mode": "rules",
+        "tools_used": [
+          "run_scenario",
+          "plan_inventory",
+          "plan_inventory"
+        ],
+        "expected_tools": [
+          "run_scenario"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 3,
+        "pass": true
+      },
+      {
+        "question": "Nếu giá giảm 10% và mưa thiếu 40 mm thì kế hoạch nhập kho đổi thế nào?",
+        "mode": "rules",
+        "tools_used": [
+          "run_scenario",
+          "plan_inventory",
+          "plan_inventory"
+        ],
+        "expected_tools": [
+          "plan_inventory"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 3,
+        "pass": true
+      },
+      {
+        "question": "Hiện có rủi ro nào tôi cần xử lý?",
+        "mode": "rules",
+        "tools_used": [
+          "get_alerts",
+          "get_forecast"
+        ],
+        "expected_tools": [
+          "get_alerts"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 2,
+        "pass": true
+      },
+      {
+        "question": "Dùng dự báo AI thay cho kinh nghiệm thì tiết kiệm được bao nhiêu?",
+        "mode": "rules",
+        "tools_used": [
+          "compare_policies"
+        ],
+        "expected_tools": [
+          "compare_policies"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 1,
+        "pass": true
+      },
+      {
+        "question": "Mô hình nào chính xác nhất?",
+        "mode": "rules",
+        "tools_used": [
+          "get_model_accuracy"
+        ],
+        "expected_tools": [
+          "get_model_accuracy"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 1,
+        "pass": true
+      },
+      {
+        "question": "Nếu lead time là 3 tháng thì AI tiết kiệm bao nhiêu so với kinh nghiệm?",
+        "mode": "rules",
+        "tools_used": [
+          "compare_policies"
+        ],
+        "expected_tools": [
+          "compare_policies"
+        ],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 1,
+        "pass": true
+      },
+      {
+        "question": "Quy định EUDR áp dụng từ ngày nào?",
+        "mode": "rules",
+        "tools_used": [],
+        "expected_tools": [],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 0,
+        "pass": true
+      },
+      {
+        "question": "Giá cà phê Indonesia tuần sau là bao nhiêu?",
+        "mode": "rules",
+        "tools_used": [],
+        "expected_tools": [],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 0,
+        "pass": true
+      },
+      {
+        "question": "Giá tăng 50% thì sao?",
+        "mode": "rules",
+        "tools_used": [],
+        "expected_tools": [],
+        "tool_ok": true,
+        "refusal_ok": true,
+        "grounded": true,
+        "unmatched": [],
+        "steps": 0,
+        "pass": true
+      }
+    ]
+  }
+}
