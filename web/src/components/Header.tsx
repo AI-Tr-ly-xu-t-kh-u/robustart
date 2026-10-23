@@ -15,7 +15,6 @@ export const NAV = [
   { href: "/tro-ly", label: "Quyết định AI" },
   { href: "/van-chuyen", label: "Vận chuyển" },
   { href: "/tin-tuc", label: "Tin tức" },
-  { href: "/gioi-thieu", label: "Giới thiệu" },
 ];
 
 export function Header() {

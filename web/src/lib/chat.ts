@@ -59,7 +59,7 @@ function fxQuestion(d: Results, q: string): ChatAnswer {
   return ok(
     "fx",
     `Trong mô hình này, tỷ giá USD/VND không làm đổi nhu cầu hay lượng tồn kho: tồn kho khuyến nghị vẫn là ${fmt(inv.orderUpTo * 1000, 0)} tấn (mức tối đa) và tồn kho an toàn ${fmt(inv.safetyStock * 1000, 0)} tấn. Tỷ giá chỉ đổi chi phí quy ra đồng.\n\nVí dụ với cấu hình mặc định (tồn kho bình quân ${fmt(inv.avgInventory * 1000, 0)} tấn, chi phí vốn 0,8%/tháng): chi phí lưu kho khoảng ${fmt(holdUsdK, 1)} nghìn USD/tháng, tương đương ${fmt(vndBase, 2)} tỷ đồng; nếu VND mất giá ${fmt(x * 100, 1)}% thì con số quy đồng tăng ${fmt(x * 100, 1)}% lên khoảng ${fmt(vndBase * (1 + x), 2)} tỷ đồng, còn chi phí USD không đổi.`,
-    ["Mục «Tồn kho» › What-if (thanh trượt tỷ giá)", "meta.sig_h, meta.z, forecast.Total, history.usdvnd", "Công thức tồn kho ở trang «Giới thiệu»"],
+    ["Mục «Tồn kho» › What-if (thanh trượt tỷ giá)", "meta.sig_h, meta.z, forecast.Total, history.usdvnd", "Công thức tồn kho trong README"],
   );
 }
 

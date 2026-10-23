@@ -13,7 +13,7 @@ export function Footer() {
         </div>
         <nav aria-label="Liên kết chân trang" className="text-sm">
           <ul className="grid grid-cols-2 gap-2">
-            {[["/tong-quan", "Dashboard"], ["/thi-truong", "Thị trường"], ["/du-bao", "Dự báo"], ["/ton-kho", "Tồn kho"], ["/tro-ly", "Trợ lý quyết định"], ["/van-chuyen", "Vận chuyển"], ["/tin-tuc", "Tin tức"], ["/gioi-thieu", "Giới thiệu"]].map(([h, l]) => (
+            {[["/tong-quan", "Dashboard"], ["/thi-truong", "Thị trường"], ["/du-bao", "Dự báo"], ["/ton-kho", "Tồn kho"], ["/tro-ly", "Trợ lý quyết định"], ["/van-chuyen", "Vận chuyển"], ["/tin-tuc", "Tin tức"]].map(([h, l]) => (
               <li key={h}><Link href={h} className="hover:text-caramel underline-offset-4 hover:underline">{l}</Link></li>
             ))}
           </ul>
